@@ -36,11 +36,13 @@ function allLoaded() {
 function catLoad (catEvt) {
   catData = JSON.parse(catEvt.target.responseText);
   console.log('catData:',catData);
-  allLoaded;
+  catLoaded = true;
+  allLoaded();
 }
 
 function prodLoad(prodEvt) {
   prodData = JSON.parse(prodEvt.target.responseText);
   console.log('prodData:',prodData);
+  prodLoaded = true;
   allLoaded();
 }
