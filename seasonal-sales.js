@@ -27,6 +27,7 @@ function getDiscount(departmentId) {
 }
 
 function printProducts() {
+  prodTable = ""
   for (var i = 0; i < prodData.products.length; i++) {
     var prodName = prodData.products[i].name;
     var departmentId = prodData.products[i].category_id;
@@ -38,7 +39,7 @@ function printProducts() {
     var price = parseFloat(listPrice * discountMultiplier).toFixed(2);
     prodTable += `<tr><td>${prodName}</td><td>${department}</td><td>${price}</td></tr>`
   }
-  var tbody =document.getElementById("products").innerHTML = prodTable;
+  document.querySelector(".products").innerHTML = prodTable;
 }
 
 function allLoaded() {
@@ -58,3 +59,5 @@ function prodLoad(prodEvt) {
   prodLoaded = true;
   allLoaded();
 }
+
+document.querySelector(".season").addEventListener("input", allLoaded);
