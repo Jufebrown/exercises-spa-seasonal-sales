@@ -9,11 +9,11 @@ var discount;
 
 
 prodRequest.addEventListener('load', prodLoad);
-prodRequest.open('GET', 'products.json');
+prodRequest.open('GET', 'https://seasonal-sales-jufe.firebaseio.com/products.json');
 prodRequest.send();
 
 catRequest.addEventListener('load', catLoad);
-catRequest.open('GET', 'categories.json');
+catRequest.open('GET', 'https://seasonal-sales-jufe.firebaseio.com/categories.json');
 catRequest.send();
 
 function getDiscount(departmentId) {
